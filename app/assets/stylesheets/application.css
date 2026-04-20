@@ -13,3 +13,275 @@
  *= require_tree .
  *= require_self
  */
+@charset "utf-8";
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: .625rem;
+    font-weight: 400;
+    color: #000;
+    background-color: #f6f6f6;
+}
+ul {
+    list-style: none;
+}
+a {
+    color: #2962ff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s;
+}
+a:hover {
+    opacity: .8;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+@media (min-width: 768px) {
+  body  {
+    font-size: .75rem;
+  }
+}
+/* 共通
+---------------------------------------------------------- */
+/* コンテナ */
+.container {
+  max-width: 61.25rem;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+}
+/* テーブル */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+.table th, .table td {
+  padding: .5rem;
+  border: 1px #e0e0e0 solid;
+}
+.table th {
+  background-color: #F7F9FC;
+}
+.table td {
+  text-align: center
+}
+@media (min-width: 768px) {
+  
+}
+/* フォーム */
+form {
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.02),0px 1px 3px rgba(50,50,93,0.15);
+}
+label {
+  margin-bottom: .5rem;
+  font-weight: 500;
+}
+.label-note::after {
+  content: "*";
+  margin-left: 2px;
+  color: red;
+}
+input, textarea {
+  padding: .375rem .75rem;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+.field {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.check-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.check-field > label {
+  margin-bottom: 0;
+}
+.check-field > input {
+  margin-right: .25rem;
+}
+.form-date {
+  display: flex;
+  flex-direction: column;
+}
+.form-date > .field {
+  width: 75%;
+}
+.form-date > .field > input {
+  width: 100%;
+}
+@media (min-width: 480px) {
+  .form-date {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+  .form-date > .field {
+    width: 50%;
+  }
+}
+.btn-list {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: .5rem;
+}
+a.btn-cancel, input.btn-save {
+  display: inline-block;
+  height: 2.25rem;
+  padding: 0 1rem;
+  text-align: center;
+  line-height: 2.25rem;
+  font-size: .75rem;
+  font-weight: 500;
+  border-radius: .25rem;
+}
+a.btn-cancel {
+  color: #000;
+  border: 1px solid #e0e0e0;
+}
+input.btn-save {
+  color: #fff;
+  background-color: #2962ff;
+  border: none;
+}
+/* ヘッダー
+---------------------------------------------------------- */
+.header {
+  height: 4rem;
+  margin-bottom: 2rem;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.15rem;
+  color: #fff;
+  background-color: #1c1d3b;
+}
+/* メイン
+---------------------------------------------------------- */
+
+/* 予定一覧
+---------------------------------------------------------- */
+.schedules-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.schedules-head h2 {
+  font-size: 1.5rem;
+}
+a.new-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+  width: 5.75rem;
+  height: 2.5rem;
+  text-align: center;
+  font-size: .75rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #2962ff;
+  border-radius: .125rem;
+}
+a.new-btn::before {
+  font-family: "bootstrap-icons";
+  content: "\F4F9";
+}
+.schedules-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1rem;
+  border-radius: .2rem;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.02), 0px 1px 3px rgba(50, 50, 93, 0.15);
+  background-color: #fff;
+}
+.schedules-cnt > span{
+  font-size: 1rem;
+  font-weight: 700;
+}
+.notice {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+  text-align: center;
+  color: #fff;
+  background-color: #333;
+}
+@media (min-width: 768px) {
+  .schedules.index .table thead th:last-child {
+    max-width: 8.5rem;
+  }
+}
+/* 新規作成
+---------------------------------------------------------- */
+.schedules.new .container {
+  max-width: 40rem;
+}
+.schedules.new h2 {
+  margin-bottom: 1.25rem;
+}
+
+/* 予定詳細
+---------------------------------------------------------- */
+.schedules.show .container {
+  max-width: 40rem;
+}
+.top-btn {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+.top-btn::before {
+  font-family: "bootstrap-icons";
+  content: "\F12F";
+}
+.detail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1rem 0 ;
+}
+.detail-top > p {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.detail-top > a  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+  width: 4.75rem;
+  height: 2.5rem;
+  text-align: center;
+  font-size: .75rem;
+  font-weight: 500;
+  border: 1px solid #2962ff;
+  border-radius: .125rem;
+}
+.detail-top > a::before {
+  font-family: "bootstrap-icons";
+  content: "\F4C9";
+}
+.schedules.show .table {
+  text-align: left;
+}
+.schedules.show .table th, .schedules.show .table td {
+  padding: 1rem;
+  text-align: left;
+}
+.schedules.show .table th {
+  width: 30%;
+}
+.schedules.show .table td {
+  word-break: break-all;
+}
