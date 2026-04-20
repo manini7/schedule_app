@@ -1,0 +1,7 @@
+<% if obj.errors[attribute].any? %>
+    <div class="error-message">
+      <% obj.errors.full_messages_for(attribute).each do |message| %>
+      <p><%= message %></p>
+      <% end %>
+    </div>
+<% end %>

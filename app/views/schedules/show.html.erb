@@ -1,0 +1,29 @@
+<p><%= link_to "一覧に戻る", schedules_path, class: "top-btn" %></p>
+
+<div class="detail-top">
+  <p><%= @schedule.title %></p>
+  <%= link_to "編集", edit_schedule_path(@schedule) %>
+</div>
+
+<table class="table">
+  <tr>
+    <th>開始日</th>
+    <td><%= @schedule.start_date %></td>
+  </tr>
+  <tr>
+    <th>終了日</th>
+    <td><%= @schedule.end_date %></td>
+  </tr>
+  <tr>
+    <th>終日</th>
+    <td>
+      <% if @schedule.is_all_day %>
+        ○
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>スケジュールメモ</th>
+    <td><%= simple_format(@schedule.memo) %></td>
+  </tr>
+</table>
