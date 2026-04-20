@@ -4,17 +4,23 @@
   <div class="field">
     <%= f.label :title, "タイトル", class: "label-note" %>
     <%= f.text_field :title, placeholder: "タイトル" %>
+    <!-- エラーメッセージの呼び出し -->
+    <%= render "shared/error", obj: @schedule, attribute: :title %>
   </div>
 
   <div class="form-date">
     <div class="field">
       <%= f.label :start_date, "開始日", class: "label-note" %>
       <%= f.date_field :start_date %>
+      <!-- エラーメッセージの呼び出し -->
+      <%= render "shared/error", obj: @schedule, attribute: :start_date %>
     </div>
 
     <div class="field">
       <%= f.label :end_date, "終了日", class: "label-note" %>
       <%= f.date_field :end_date %>
+      <!-- エラーメッセージの呼び出し -->
+      <%= render "shared/error", obj: @schedule, attribute: :end_date %>
     </div>
   </div>
 
@@ -26,6 +32,8 @@
   <div class="field">
     <%= f.label :memo, "スケジュールメモ" %>
     <%= f.text_area :memo, placeholder: "メモを入力する" %>
+    <!-- エラーメッセージの呼び出し -->
+      <%= render "shared/error", obj: @schedule, attribute: :memo %>
   </div>
 
   <ul class="btn-list">
